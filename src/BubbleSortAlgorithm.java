@@ -4,10 +4,19 @@ public class BubbleSortAlgorithm {
 
     }
 
-    public static int[] bubbleSort(int[] unsortedArray) {
+    public static int[] bubbleSort(int[] inputArray) {
 
-        int[] sortedArray = new int[unsortedArray.length];
+        int storage;
 
-        return sortedArray;
+        for (int i = 0; i < inputArray.length; i++) {
+            for (int j = 0; j < inputArray.length - i; j++) {
+                if(inputArray[j+1] > inputArray[j]){
+                    storage = inputArray[j+1];
+                    inputArray[j] = inputArray[j+1];
+                    inputArray[j] = storage;
+                }
+            }
+        }
+        return inputArray;
     }
 }
